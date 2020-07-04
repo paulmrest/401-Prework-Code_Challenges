@@ -67,3 +67,18 @@ Console output denoting whether the sequence is perfect.
 
 Assumptions:
 - Is supplied with an array of integers. Behavior unknown with any other numerical or data type.
+
+***
+
+## Problem 04
+
+Problem Title: Sum of Rows
+
+Description: given a 2d matrix of integers, return a 1d array that is the sum of each row of integers. In other words, given an array of arrays, return an array of of the sum of each of the inner arrays.
+
+Inputs:
+None. We'll be randomly generating the 2d matrix.
+
+Output:
+An array where each element is a sum of one of the matrix's rows.
+![CC-04 Output](images/CC04-Solution.png)
