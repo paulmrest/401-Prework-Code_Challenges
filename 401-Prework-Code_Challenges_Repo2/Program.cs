@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Prework_CodeChallenges
 {
@@ -12,16 +13,22 @@ namespace Prework_CodeChallenges
             //GetScore(BuildUserArray());
 
             //Problem 2: Leap Year Calculator
-            LeapYearCalc(1900);
-            LeapYearCalc(2000);
-            LeapYearCalc(1996);
-            LeapYearCalc(1953);
-            LeapYearCalc(2100);
-            LeapYearCalc(2400);
-            LeapYearCalc(1700);
-            LeapYearCalc(1624);
-            LeapYearCalc(0);
+            //LeapYearCalc(1900);
+            //LeapYearCalc(2000);
+            //LeapYearCalc(1996);
+            //LeapYearCalc(1953);
+            //LeapYearCalc(2100);
+            //LeapYearCalc(2400);
+            //LeapYearCalc(1700);
+            //LeapYearCalc(1624);
+            //LeapYearCalc(0);
 
+            //Problem 3: Perfect Sequence
+            PerfectSequencePrint(new int[] { 2, 2 });
+            PerfectSequencePrint(new int[] { 1, 3, 2 });
+            PerfectSequencePrint(new int[] { 0, 0, 0, 0 });
+            PerfectSequencePrint(new int[] { 4, 5, 6 });
+            PerfectSequencePrint(new int[] { 0, 2, -2 });
         }
 
         //Problem 1: Array Max Result
@@ -91,18 +98,7 @@ namespace Prework_CodeChallenges
         //Helper Method
         static void PrintIntArray(int[] intArray)
         {
-            Console.WriteLine("The entered numbers are:");
-            for (int i = 0; i < intArray.Length; i++)
-            {
-                if (i >= intArray.Length - 1)
-                {
-                    Console.Write("{0}", intArray[i]);
-                }
-                else
-                {
-                    Console.Write("{0}, ", intArray[i]);
-                }
-            }
+            Console.WriteLine("The entered numbers are: {0}", StringifyIntArray(intArray));
             Console.WriteLine();
         }
 
@@ -138,7 +134,7 @@ namespace Prework_CodeChallenges
             return score;
         }
 
-        //Problem 1: Leap Year Calculator
+        //Problem 2: Leap Year Calculator
         //Method 1
         static void LeapYearCalc(int year)
         {
@@ -151,6 +147,53 @@ namespace Prework_CodeChallenges
                 Console.WriteLine("{0} is a leap year.", year);
             }
         }
-    }
 
+        //Problem 3
+        //Method 1
+        static void PerfectSequencePrint(int [] intArray)
+        {
+            int sum = 0;
+            int product = 1;
+            foreach (int oneInt in intArray)
+            {
+                if (oneInt < 0)
+                {
+                    product = -1;
+                    break;
+                }
+                sum += oneInt;
+                product *= oneInt;
+            }
+            String arrayAsString = StringifyIntArray(intArray);
+            if (sum == product)
+            {
+                Console.WriteLine("Yes, the sequence {0} is perfect.", arrayAsString);
+            }
+            else
+            {
+                Console.WriteLine("No, the sequence {0} not is perfect.", arrayAsString);
+            }
+        }
+
+
+
+        //General Helper Methods
+        static String StringifyIntArray(int[] intArray)
+        {
+            StringBuilder arrayString = new StringBuilder();
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                if (i >= intArray.Length - 1)
+                {
+                    arrayString.Append(intArray[i]);   
+                }
+                else
+                {
+                    arrayString.Append($"{intArray[i]}, ");
+                }
+            }
+            return arrayString.ToString();
+        }
+
+    }
 }

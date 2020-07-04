@@ -45,7 +45,25 @@ A year represented by an integer.
 
 Output:
 Console printout of whether the given year is a leap year.
-![CC-01 Output](images/CC01-Solution.png)
+![CC-02 Output](images/CC02-Solution.png)
 
 Assumptions:
 - Can only handle years respresented by integers. Behavior for other numerical types is not guaranteed. Cannot handle years represented by a Date object or similar.
+
+***
+
+## Problem 03
+
+Problem Title: Perfect Sequence
+
+Description: determine if an array of integers are a perfect sequence. A perfect sequence is defined as one where the element's sum is equal to their product.
+
+Inputs:
+An array of integers.
+
+Output:
+Console output denoting whether the sequence is perfect.
+![CC-03 Output](images/CC03-Solution.png)
+
+Assumptions:
+- Is supplied with an array of integers. Behavior unknown with any other numerical or data type.

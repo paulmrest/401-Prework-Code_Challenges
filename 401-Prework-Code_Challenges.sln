@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "401-Prework-Code_Challenges_Repo2", "401-Prework-Code_Challenges_Repo2\401-Prework-Code_Challenges_Repo2.csproj", "{0AF69E36-1178-4112-A924-233C01EDC71A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "401-Prework-Code_Challenges", "401-Prework-Code_Challenges_Repo2\401-Prework-Code_Challenges.csproj", "{0AF69E36-1178-4112-A924-233C01EDC71A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
