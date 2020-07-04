@@ -9,7 +9,19 @@ namespace Prework_CodeChallenges
         static void Main(string[] args)
         {
             //Problem 1: Array Max Result
-            GetScore(BuildUserArray());
+            //GetScore(BuildUserArray());
+
+            //Problem 2: Leap Year Calculator
+            LeapYearCalc(1900);
+            LeapYearCalc(2000);
+            LeapYearCalc(1996);
+            LeapYearCalc(1953);
+            LeapYearCalc(2100);
+            LeapYearCalc(2400);
+            LeapYearCalc(1700);
+            LeapYearCalc(1624);
+            LeapYearCalc(0);
+
         }
 
         //Problem 1: Array Max Result
@@ -125,5 +137,20 @@ namespace Prework_CodeChallenges
             }
             return score;
         }
+
+        //Problem 1: Leap Year Calculator
+        //Method 1
+        static void LeapYearCalc(int year)
+        {
+            if (year % 4 != 0 || (year % 100 == 0 && year % 400 != 0))
+            {
+                Console.WriteLine("{0} is NOT a leap year.", year);
+            }
+            else
+            {
+                Console.WriteLine("{0} is a leap year.", year);
+            }
+        }
     }
+
 }
