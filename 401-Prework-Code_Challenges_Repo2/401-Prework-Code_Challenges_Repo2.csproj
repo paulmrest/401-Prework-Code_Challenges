@@ -6,4 +6,8 @@
     <RootNamespace>_401_Prework_Code_Challenges_Repo2</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+
 </Project>
