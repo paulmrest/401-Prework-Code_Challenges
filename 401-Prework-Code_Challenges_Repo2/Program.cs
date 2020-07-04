@@ -24,11 +24,18 @@ namespace Prework_CodeChallenges
             //LeapYearCalc(0);
 
             //Problem 3: Perfect Sequence
-            PerfectSequencePrint(new int[] { 2, 2 });
-            PerfectSequencePrint(new int[] { 1, 3, 2 });
-            PerfectSequencePrint(new int[] { 0, 0, 0, 0 });
-            PerfectSequencePrint(new int[] { 4, 5, 6 });
-            PerfectSequencePrint(new int[] { 0, 2, -2 });
+            //PerfectSequencePrint(new int[] { 2, 2 });
+            //PerfectSequencePrint(new int[] { 1, 3, 2 });
+            //PerfectSequencePrint(new int[] { 0, 0, 0, 0 });
+            //PerfectSequencePrint(new int[] { 4, 5, 6 });
+            //PerfectSequencePrint(new int[] { 0, 2, -2 });
+
+            //Problem 4: Sum of Rows
+            int[][] randIntMatrix = Generate2dIntMatrix();
+            Console.WriteLine("Our randomly generated integer matrix is:");
+            Console.WriteLine(Stringify2dIntMatrix(randIntMatrix));
+            Console.WriteLine("The sum of the matrix's rows is:");
+            Console.WriteLine(StringifyIntArray(Sum2dIntMatrixRows(randIntMatrix)));
         }
 
         //Problem 1: Array Max Result
@@ -175,7 +182,43 @@ namespace Prework_CodeChallenges
             }
         }
 
+        //Problem 4
+        //Method 1
+        static int[] Sum2dIntMatrixRows(int[][] intMatrix)
+        {
+            List<int> sumList = new List<int>();
+            foreach (int[] innerIntArray in intMatrix)
+            {
+                int rowSum = 0;
+                Array.ForEach(innerIntArray, oneInt => rowSum += oneInt);
+                sumList.Add(rowSum);
+            }
+            return sumList.ToArray();
+        }
 
+        //Problem 4
+        //Method 2
+        static int[][] Generate2dIntMatrix()
+        {
+            Random rand = new Random();
+            //number or rows will be 3 - 10, inclusive
+            int numOfRows = rand.Next(3, 11);
+            int[][] matrix = new int[numOfRows][];
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                //number of elements in each row will be 3 - 20, inclusive
+                int thisRowEls = rand.Next(3, 21);
+                int[] newRow = new int[thisRowEls];
+                for (int j = 0; j < newRow.Length; j++)
+                {
+                    //each element will be an int -1000 - 1000, inclusive
+                    int newEl = rand.Next(-1000, 1001);
+                    newRow[j] = newEl;
+                }
+                matrix[i] = newRow;
+            }
+            return matrix;
+        }
 
         //General Helper Methods
         static String StringifyIntArray(int[] intArray)
@@ -193,6 +236,16 @@ namespace Prework_CodeChallenges
                 }
             }
             return arrayString.ToString();
+        }
+
+        static String Stringify2dIntMatrix(int[][] intMatrix)
+        {
+            StringBuilder stringMatrix = new StringBuilder();
+            foreach (int[] innerArray in intMatrix)
+            {
+                stringMatrix.AppendLine(StringifyIntArray(innerArray));
+            }
+            return stringMatrix.ToString();
         }
 
     }
